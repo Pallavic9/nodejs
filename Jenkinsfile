@@ -2,6 +2,9 @@
 pipeline {
 	node any
     stages {
+	    stage("Checkout") {
+		git credentialsId: 'docker-cred', url: 'https://github.com/Pallavic9/nodejs.git'	    
+	    }
         
         stage("Build Nodejs Docker image ") {
             steps {
