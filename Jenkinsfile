@@ -1,14 +1,6 @@
 
-#!/usr/bin/env groovy
-
 pipeline {
-
-
-    agent {
-		
-    }
-
-
+	node any
     stages {
         
         stage("Build Nodejs Docker image ") {
