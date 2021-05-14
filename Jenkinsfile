@@ -22,8 +22,8 @@ pipeline {
 	    stage("Push docker image to docker hub") {
 		    step {
 		   sh (
-		 	label: 'push docker image to docker hub'
-			script: 'docker push pallavic9/my-images:node'
+		 	label: 'push docker image to docker hub',
+			script: 'docker push  pallavic9/my-images:node'
 		      )
 		    }
 		    stage("run image") {
