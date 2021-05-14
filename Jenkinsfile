@@ -1,4 +1,5 @@
-#!/usr/bin/env groovy​
+
+#!/usr/bin/env groovy
 
 pipeline {
 
@@ -10,12 +11,12 @@ pipeline {
 
     stages {
         
-        stage("Build Nodejs ") {
+        stage("Build Nodejs Docker image ") {
             steps {
                 dir('.') {
                     sh (
-                        label: 'Mvn',
-                        script: 'mvn -DskipTests clean package'
+                        label: 'Node js docker image build',
+                        script: 'docker build -t web-app . && docker tag web-app:latest pallavic9/my-images:node'
                     )
                 }
             }
