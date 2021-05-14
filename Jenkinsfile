@@ -26,6 +26,7 @@ pipeline {
 			script: 'docker push  pallavic9/my-images:node'
 		      )
 		    }
+	    }
 		    stage("run image") {
 			    step{
 				    sh(
