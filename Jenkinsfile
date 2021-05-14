@@ -19,6 +19,19 @@ pipeline {
                 
             }
         }      
-        
+	    stage("Push docker image to docker hub") {
+		    step {
+		   sh (
+		 	label: 'push docker image to docker hub'
+			script: 'docker push pallavic9/my_images:node'
+		      )
+		    }
+		    stage("run image") {
+			    step{
+				    sh(
+					    script: 'docker run -itd -p 49160:8080 pallavic9/my-images:node'
+					    )
+			    }
+		    }
     }
 }
